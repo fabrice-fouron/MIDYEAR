@@ -1,27 +1,27 @@
-from flask import Flask, render_template, url_for
-from hashlib import sha256
+import sample
 
-app = Flask(__name__)
+name = None
+ID = None
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+print("Welcome!\nType in a command")
+command = input("login, logout, new account, buy, logout, history:\n")
 
+while command != "exit":
+    if command == "login":
+        ID = sample.login(name)
+    elif command == "logout":
+        print("Goodbye!")
+        break
+    elif command == "new account":
+        sample.new_customer()
+    elif command == "buy":
+        if ID is None:
+            print("You have to login first!")
+            ID = sample.login(name)
 
-@app.route("/login")
-def login():
-    return render_template("login.html")
-
-
-@app.route("/create_account")
-def create_account():
-    return render_template("create_account")
-
-
-@app.route("/dashboard")
-def dashboard():
-    return render_template("dashboard.html")
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
+        amount = int(input("Amount of Items to buy: "))
+        sample.new_order(ID, amount)
+    elif command == "history":
+        sample.history(ID)
+    else:
+        print("Command does not found")
