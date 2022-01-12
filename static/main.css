@@ -1,0 +1,28 @@
+html {
+    background-color:black;
+}
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-image: url(https://images.unsplash.com/photo-1590767187868-b8e9ece0974b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max);
+    background-repeat: no-repeat;
+}
+
+#indexbuttons {
+    width: 330px;
+    margin-top: 25%;
+    margin-left: 45%;
+    padding: 0px;
+}
+
+#index {
+    font-size: 40px;
+    background-color: orange;
+    border-radius: 5px;
+    box-shadow: 2px 2px yellow;
+    margin: 10px;
+}
+
+#index :hover {
+    background-color: yellow;
+}
