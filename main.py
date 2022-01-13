@@ -16,9 +16,9 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/create_account")  # Page for creating an account
+@app.route("/create-account")  # Page for creating an account
 def create_account():
-    return render_template("create_account")
+    return render_template("create_account.html")
 
 
 @app.route("/dashboard")  # Page for displaying a dashboard

@@ -6,20 +6,6 @@
             "username": "fb001dfcffd1c899f3297871406242f097aecf1a5342ccf3ebcd116146188e4b",
             "password": "fb001dfcffd1c899f3297871406242f097aecf1a5342ccf3ebcd116146188e4b",
             "sent": 0
-        },
-        {
-            "id": 2,
-            "name": "Fabrice",
-            "username": "c0659cf3a520a0cd74378e527656a2b5fac61b14d4f9e5304df978e4c7a84fe1",
-            "password": "dc7c811b9561739d9b75bb3e9e1715970a868834e62251b0b9ca02e74d0f42c9",
-            "sent": 0
-        },
-        {
-            "id": 3,
-            "name": "hello",
-            "username": "c5e80ac8d1e88db988a45af63d10fc1855193794f399efd4a0e592e35ed9e21c",
-            "password": "348f24c4fb95ebf669f66e8c59ab64266b55e67c35c2d91b39a39272081e88b0",
-            "sent": 0
         }
     ]
 }
