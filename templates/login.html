@@ -1,8 +1,19 @@
+{% extends 'layout.html' %}
 {% block head %}
   <title>Login</title>
 {% endblock head %}
 
 {% block body %}
-  <h1>hello</h1>
-  
+  <div id="login">
+    <center><h1>Login</h1></center>
+    <div id="mini">
+      <center>
+        <input type="text" placeholder="Enter username">
+        <br>
+        <input type="password" placeholder="Enter your password">
+        <br>
+        <input type="button" value="Submit">
+      </center>
+    </div>
+  </div>
 {% endblock body %}

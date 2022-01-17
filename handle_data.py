@@ -9,7 +9,7 @@ def to_hash(arg):
     return hashed.hexdigest()  # Return the hash code
 
 
-def create_account():
+def createaccount():
     with open("data.json", "r") as f:
         temp = json.load(f)
 
