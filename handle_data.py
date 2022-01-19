@@ -3,6 +3,7 @@ from hashlib import sha256
 
 
 def to_hash(arg):
+    """Turn the info entered into a hash code"""
     hashed = sha256()  # Hashing algorithm
     arg = bytearray(arg, encoding="utf-8")  # Change argument into binary
     hashed.update(arg)  # Input the binary argument in to the hashing algorithm
@@ -10,6 +11,7 @@ def to_hash(arg):
 
 
 def createaccount():
+    """A user is creating an account"""
     with open("data.json", "r") as f:
         temp = json.load(f)
 
@@ -31,6 +33,7 @@ def createaccount():
 
 
 def sign_in(username, password):
+    """The user is signing in into his/her account"""
     with open("data.json", "r") as f:
         temp = json.load(f)
 
@@ -42,3 +45,7 @@ def sign_in(username, password):
     else:
         return
 
+
+def update_account_status():
+    """Updates the account of a user"""
+    pass

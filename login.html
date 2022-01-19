@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+  <title>Login</title>
+{% endblock head %}
+
+{% block body %}
+  {% for message in get_flashed_messages() %}
+    <div class="alert_alert_warning">
+        <button type="button" class="close" data-dismiss="alert&times;">X</button>
+        {{ message }}
+    </div>
+  {% endfor %}
+
+  <div id="login">
+    <center><h1>Login</h1></center>
+    <form method="post">
+      <div id="mini">
+        <center>
+          <input type="text" placeholder="Enter username" name="username" value="username">
+          <br>
+          <input type="password" placeholder="Enter your password" name="password" value="password">
+          <br>
+          <input type="submit" name="logging_in" value="Submit">
+        </center>
+      </div>
+    </form>
+  </div>
+{% endblock body %}
