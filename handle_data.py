@@ -37,13 +37,17 @@ def sign_in(username, password):
     with open("data.json", "r") as f:
         temp = json.load(f)
 
-    if to_hash(username) in [j["username"] for j in temp["users"]]:
-        if to_hash(password) in [j["password"] for j in temp["users"]]:
-            return True
-        else:
-            return False
+    try:
+        ind = [j["username"] for j in temp["users"]].index(to_hash(username)) # index method raises ValueError if value is not found
+    except ValueError:  # Return False if value not found
+        return False
+    if to_hash(password) == [j["password"] for j in temp["users"]][ind]:
+        return True
     else:
-        return
+        return False
+
+
+# print(sign_in("admin", "admin"))
 
 
 def update_account_status():

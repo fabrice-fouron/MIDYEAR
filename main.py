@@ -4,8 +4,9 @@ from handle_data import *
 
 
 app = Flask(__name__)
-app.secret_key = b"bruh, look at this dude"
 
+username = ""
+password = ""
 
 @app.route("/")  # Main page
 def index():
@@ -14,7 +15,13 @@ def index():
 
 @app.route("/login", methods=["GET", "POST"])  # Login Page
 def login():
-    flash("Hello world")
+    if request.method == "POST":
+        username = get_login_data()[0]
+        password = get_login_data()[1]
+        if sign_in(username, password):
+            return redirect(url_for("dashboard"))
+        else:
+            return f"Credentials non-existent: {username}, {password}"
     return render_template("login.html")
 
 
@@ -29,12 +36,9 @@ def dashboard():
 
 
 def get_login_data():
-    if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
-        # if username == "" or password == "":
-        #     flash("At least one of the fields is empty")
-        return username, password
+    username = request.form["username"]
+    password = request.form["password"]
+    return username, password
 
 
 def get_register_data():

@@ -2,18 +2,9 @@
     <header>
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
         {% block head %}
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <ul>
-                        {% for message in messages %}
-                            <li>{{ message }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endwith %}
-
         {% endblock head %}
     </header>
+
     <body>
         {% block body %}
 
