@@ -8,6 +8,7 @@ app = Flask(__name__)
 username = ""
 password = ""
 
+
 @app.route("/")  # Main page
 def index():
     return render_template("index.html")
@@ -27,6 +28,11 @@ def login():
 
 @app.route("/create-account")  # Page for creating an account
 def create_account():
+    if request.method == "POST":
+        fullname = get_register_data()[0]
+        username = get_login_data()[1]
+        password = get_login_data()[2]
+        
     return render_template("create_account.html")
 
 

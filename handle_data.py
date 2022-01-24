@@ -37,17 +37,22 @@ def sign_in(username, password):
     with open("data.json", "r") as f:
         temp = json.load(f)
 
-    try:
-        ind = [j["username"] for j in temp["users"]].index(to_hash(username)) # index method raises ValueError if value is not found
-    except ValueError:  # Return False if value not found
-        return False
-    if to_hash(password) == [j["password"] for j in temp["users"]][ind]:
+    var = find_correspondence("users", "username")
+    if to_hash(password) == [j["password"] for j in temp["users"]][var]:
         return True
     else:
         return False
 
 
-# print(sign_in("admin", "admin"))
+def find_correspondence(obj, param):
+    with open("data.json", "r") as f:
+        temp = json.load(f)
+
+    try:
+        ind = [j[obj] for j in temp["users"]].index(to_hash(param)) # index method raises ValueError if value is not found
+    except ValueError:  # Return False if value not found
+        return False
+    return ind
 
 
 def update_account_status():
