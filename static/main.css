@@ -15,7 +15,7 @@ body {
     padding: 0px;
 }
 
-#index {
+.index {
     font-size: 40px;
     background-color: orange;
     border-radius: 5px;
@@ -23,26 +23,53 @@ body {
     margin: 10px;
 }
 
-#index :hover {
+.index:hover {
     background-color: yellow;
+    box-shadow: 2px 2px orange;
 }
 
 #login {
     position: relative;
     top: 30%;
     background-color: white;
-    opacity: 50%;
+    opacity: 85%;
     padding: 10px;
 }
 
 #create_account_div {
     position: relative;
-    top: 40%;
+    top: 30%;
     background-color: white;
-    opacity: 50%;
+    opacity: 85%;
+    padding: 10px;
 }
+
 input {
     font-size: 20px;
     padding: 5px;
     margin: 10px;
+    opacity: 100%;
+}
+
+.alert_alert_warning {
+    text-color: "white";
+}
+
+textarea {
+    opacity: 85%;
+}
+
+#options {
+    position: relative;
+    left: 40%;
+    top: 45%;
+}
+
+.dashb {
+    padding: 5px;
+    margin:5px;
+}
+
+p {
+    color: white;
 }

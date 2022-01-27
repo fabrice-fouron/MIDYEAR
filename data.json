@@ -4,15 +4,13 @@
             "id": 1,
             "name": "admin",
             "username": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
-            "password": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
-            "sent": 0
-        }
-    ],
-    "sent": [
+            "password": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+        },
         {
-            "id":1,
-            "senderId": 1,
-            "receiverId": 1
+            "id": 2,
+            "name": "Fabrice Fouron",
+            "username": "3a2c449999ee7e35f46e6cd0c673abfffaab095a017b29b2e2655c00072a0849",
+            "password": "07123e1f482356c415f684407a3b8723e10b2cbbc0b8fcd6282c49d37c9c1abc"
         }
     ]
 }

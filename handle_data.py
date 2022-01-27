@@ -10,26 +10,30 @@ def to_hash(arg):
     return hashed.hexdigest()  # Return the hash code
 
 
-def createaccount():
+def createaccount(fullname, username, password):
     """A user is creating an account"""
     with open("data.json", "r") as f:
         temp = json.load(f)
 
-    actual_name = input("Enter your full name: ")  # User enters his name
+    actual_name = fullname  # User enters his name
 
-    username = to_hash(input("Enter your username: "))
-    password = to_hash(input("Enter your password: "))
+    username = to_hash(username)
+    password = to_hash(password)
 
-    temp["users"].append({
-        "id": len(temp["users"]) + 1,
-        "name": actual_name,
-        "username": username,
-        "password": password,
-        "sent": 0
-    })
+    try:
+        ind = [j["username"] for j in temp["users"]].index(username) # index method raises ValueError if username is not found
+    except ValueError:  # Add new information if the user is not found
+        temp["users"].append({
+            "id": len(temp["users"]) + 1,
+            "name": actual_name,
+            "username": username,
+            "password": password
+        })
 
-    with open("data.json", "w") as f:
-        json.dump(temp, f, indent=4, separators=(",", ": "))
+        with open("data.json", "w") as f:
+            json.dump(temp, f, indent=4, separators=(",", ": "))
+        return False
+
 
 
 def sign_in(username, password):
@@ -38,18 +42,10 @@ def sign_in(username, password):
         temp = json.load(f)
 
     try:
-        ind = [j["username"] for j in temp["users"]].index(to_hash(username)) # index method raises ValueError if value is not found
+        ind = [j["username"] for j in temp["users"]].index(to_hash(username)) # index method raises ValueError if username is not found
     except ValueError:  # Return False if value not found
         return False
     if to_hash(password) == [j["password"] for j in temp["users"]][ind]:
         return True
     else:
         return False
-
-
-# print(sign_in("admin", "admin"))
-
-
-def update_account_status():
-    """Updates the account of a user"""
-    pass
