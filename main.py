@@ -32,6 +32,7 @@ app = Flask(__name__)
 user1 = User("None", "None", "None")
 
 
+
 @app.route("/")  # Main page
 @app.route("/home")
 def index():
